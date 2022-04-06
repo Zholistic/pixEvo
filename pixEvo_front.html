@@ -113,9 +113,10 @@
 	async function pulseOnce(pixelEach) {
 	
 	  //wait 100 ms
-	  turnBlue(pixelEach);
-      await sleep(500);
+	  turnWhite(pixelEach);
+      await sleep(1000);
       turnBlack(pixelEach);
+	  await sleep(1000);
 	  //turn black
 	  //turnBlack(pixelEach);	  
 	  
