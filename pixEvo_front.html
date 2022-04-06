@@ -61,6 +61,16 @@
         drawBoard();
 		pulseSequenceEach();
     }
+	
+	function main() {
+        setTimeout(function onTick() {
+        clearCanvas();
+        drawBoard();
+		pulseSequenceEach();
+        // Call main again
+        main();
+      }, 100)
+    }
     
     // draw a border around the canvas
     function clearCanvas() {
@@ -102,14 +112,26 @@
 	
 	function pulseOnce(pixelEach) {
 	
+	  //wait 100 ms
+	  const blinkOut = setTimeout(turnWhite, 100);	  
+	  //turn black
+	  turnBlack(pixelEach);	  
+	  
+	}
+	
+	function turnWhite(pixelEach) {
+	
 	  //turn white
 	  board_ctx.fillStyle = "white";
 	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);
-	  //wait 50 ms
-	  await sleep(50);	  
+	  
+	}
+	
+	function turnBlack(pixelEach) {
+	
 	  //turn black
 	  board_ctx.fillStyle = "black";
-	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);	  
+	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);
 	  
 	}
 	
