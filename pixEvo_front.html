@@ -46,8 +46,8 @@
 	//define pixel / blocks / points array
 	var pixels = [];
 	
-	for (let i = 1; i < board.width; i++) {
-		for(let j = 1; j < board.height; j++) {
+	for (let i = 1; i < board.width; i = i + 10) {
+		for(let j = 1; j < board.height; j = j + 10) {
 			pixels.push([i,j]);
 		}
 	}
