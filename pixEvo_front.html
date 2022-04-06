@@ -59,6 +59,7 @@
     function main() {
         clearCanvas();
         drawBoard();
+		pulseSequenceEach();
     }
     
     // draw a border around the canvas
@@ -92,6 +93,35 @@
       // Draw a border around the pixel part
       //board_ctx.strokeRect(pixelPart.x, pixelPart.y, 10, 10);
     }
+	
+	function pulseSequenceEach() {
+		//turn each pixel white, wait, then black
+		pixels.forEach(pulseOnce)
+	}
+	
+	
+	function pulseOnce(pixelEach) {
+	
+	  //turn white
+	  board_ctx.fillStyle = "white";
+	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);
+	  //wait 50 ms
+	  await sleep(50);	  
+	  //turn black
+	  board_ctx.fillStyle = "black";
+	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);	  
+	  
+	}
+	
+	
+	//sleep function milliseconds
+	function sleep(ms) {
+	
+	  return new Promise(resolve => setTimeout(resolve, ms));
+	  
+	}
+	
+	
     
   </script>
 </html>
