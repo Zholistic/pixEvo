@@ -113,7 +113,7 @@
 	function pulseOnce(pixelEach) {
 	
 	  //wait 100 ms
-	  const blinkOut = setTimeout(turnWhite, 100);	  
+	  const blinkOut = setTimeout(turnBlue, 500);	  
 	  //turn black
 	  turnBlack(pixelEach);	  
 	  
@@ -133,6 +133,14 @@
 	  board_ctx.fillStyle = "black";
 	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);
 	  
+	}
+	
+	function turnBlue(pixelEach) {
+	
+	  //turn blue
+	  board_ctx.fillStyle = "blue";
+	  board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);	
+	
 	}
 	
 	
