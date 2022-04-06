@@ -104,16 +104,18 @@
       //board_ctx.strokeRect(pixelPart.x, pixelPart.y, 10, 10);
     }
 	
-	function pulseSequenceEach() {
+	async function pulseSequenceEach() {
 		//turn each pixel white, wait, then black
 		pixels.forEach(pulseOnce)
 	}
 	
 	
-	function pulseOnce(pixelEach) {
+	async function pulseOnce(pixelEach) {
 	
 	  //wait 100 ms
-	  const blinkOut = setTimeout(turnBlue, 500);	  
+	  turnBlue(pixelEach);
+      await sleep(500);
+      turnBlack(pixelEach);
 	  //turn black
 	  //turnBlack(pixelEach);	  
 	  
