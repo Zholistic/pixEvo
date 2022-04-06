@@ -27,25 +27,38 @@
     const snake_border = 'white';
     
     let snake = [
-      {x: 0, y: 0},
+      {x: 1, y: 1},
 	  {x: 200, y: 200},
       {x: 190, y: 200},
       {x: 180, y: 200},
       {x: 170, y: 200},
       {x: 160, y: 200}
     ]
+	
+
     
     // Get the canvas element
     const board = document.getElementById("board");
     // Return a two dimensional drawing context
     const board_ctx = board.getContext("2d");
     // Start game
+	
+	//define pixel / blocks / points array
+	var pixels = [];
+	
+	for (let i = 1; i < board.width; i++) {
+		for(let j = 1; j < board.height; j++) {
+			pixels.push([i,j]);
+		}
+	}
+			
+	
     main();
     
     // main function called repeatedly to keep the game running
     function main() {
         clearCanvas();
-        drawSnake();
+        drawBoard();
     }
     
     // draw a border around the canvas
@@ -60,14 +73,14 @@
       board_ctx.strokeRect(0, 0, board.width, board.height);
     }
     
-    // Draw the snake on the canvas
-    function drawSnake() {
+    // Draw the pixels on the board
+    function drawBoard() {
       // Draw each part
-      snake.forEach(drawSnakePart)
+      pixels.forEach(drawPixelPart)
     }
     
     // Draw one snake part
-    function drawSnakePart(snakePart) {
+    function drawPixelPart(pixelPart) {
 
       // Set the colour of the snake part
       board_ctx.fillStyle = snake_col;
@@ -75,9 +88,9 @@
       board_ctx.strokestyle = snake_border;
       // Draw a "filled" rectangle to represent the snake part at the coordinates
       // the part is located
-      board_ctx.fillRect(snakePart.x, snakePart.y, 8, 8);
-      // Draw a border around the snake part
-      //board_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+      board_ctx.fillRect(pixelPart.x, pixelPart.y, 8, 8);
+      // Draw a border around the pixel part
+      //board_ctx.strokeRect(pixelPart.x, pixelPart.y, 10, 10);
     }
     
   </script>
