@@ -8,10 +8,10 @@
 
   <body>
 
-    <canvas id="snakeboard" width="400" height="400"></canvas>
+    <canvas id="board" width="800" height="800"></canvas>
 
     <style>
-      #snakeboard {
+      #board {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -36,9 +36,9 @@
     ]
     
     // Get the canvas element
-    const snakeboard = document.getElementById("snakeboard");
+    const board = document.getElementById("board");
     // Return a two dimensional drawing context
-    const snakeboard_ctx = snakeboard.getContext("2d");
+    const board_ctx = board.getContext("2d");
     // Start game
     main();
     
@@ -51,13 +51,13 @@
     // draw a border around the canvas
     function clearCanvas() {
       //  Select the colour to fill the drawing
-      snakeboard_ctx.fillStyle = board_background;
+      board_ctx.fillStyle = board_background;
       //  Select the colour for the border of the canvas
-      snakeboard_ctx.strokestyle = board_border;
+      board_ctx.strokestyle = board_border;
       // Draw a "filled" rectangle to cover the entire canvas
-      snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
+      board_ctx.fillRect(0, 0, board.width, board.height);
       // Draw a "border" around the entire canvas
-      snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
+      board_ctx.strokeRect(0, 0, board.width, board.height);
     }
     
     // Draw the snake on the canvas
@@ -70,14 +70,14 @@
     function drawSnakePart(snakePart) {
 
       // Set the colour of the snake part
-      snakeboard_ctx.fillStyle = snake_col;
+      board_ctx.fillStyle = snake_col;
       // Set the border colour of the snake part
-      snakeboard_ctx.strokestyle = snake_border;
+      board_ctx.strokestyle = snake_border;
       // Draw a "filled" rectangle to represent the snake part at the coordinates
       // the part is located
-      snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 8, 8);
+      board_ctx.fillRect(snakePart.x, snakePart.y, 8, 8);
       // Draw a border around the snake part
-      //snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+      //board_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
     }
     
   </script>
