@@ -52,7 +52,8 @@
 		}
 	}
 			
-	
+			
+	clearCanvas();
     main();
     
     // main function called repeatedly to keep the game running
@@ -63,15 +64,13 @@
     //}
 	
 	function main() {
-		clearCanvas();
-		
+	
         setTimeout(function onTick() {
         drawBoard();
 		pulseSequenceEach();
         // Call main again
         main();
-      }, 1000)
-	  
+      }, 1000)	  
 	  
     }
     
