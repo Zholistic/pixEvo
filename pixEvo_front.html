@@ -63,13 +63,13 @@
     //}
 	
 	function main() {
-        setTimeout(function onTick() {
+        //setTimeout(function onTick() {
         clearCanvas();
         drawBoard();
 		pulseSequenceEach();
         // Call main again
-        main();
-      }, 100)
+        //main();
+      //}, 100)
     }
     
     // draw a border around the canvas
@@ -115,7 +115,7 @@
 	  //wait 100 ms
 	  const blinkOut = setTimeout(turnBlue, 500);	  
 	  //turn black
-	  turnBlack(pixelEach);	  
+	  //turnBlack(pixelEach);	  
 	  
 	}
 	
