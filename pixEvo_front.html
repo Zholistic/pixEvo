@@ -90,7 +90,10 @@
     // Draw the pixels on the board
     function drawBoard() {
       // Draw each part
-      pixels.forEach(drawPixelPart)
+      //pixels.forEach(drawPixelPart)
+	  for(let i=0; i < pixels.length; i++) {
+			drawPixelPart(pixels[i]);
+		}
     }
     
     // Fill in the board with pixels
