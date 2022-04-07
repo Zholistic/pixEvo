@@ -54,6 +54,7 @@
 			
 			
 	clearCanvas();
+	drawBoard();
     main();
     
     // main function called repeatedly to keep the game running
@@ -66,7 +67,7 @@
 	function main() {
 	
         setTimeout(function onTick() {
-        drawBoard();
+        
 		pulseSequenceBlueBlack();
 		
         // Call main again
