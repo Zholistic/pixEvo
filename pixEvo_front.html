@@ -71,7 +71,7 @@
 		
         // Call main again
         main();
-      }, 200)	  
+      }, 2000)	  
 	  
     }
     
@@ -125,7 +125,7 @@
 	  //wait 100 ms
 	  //await sleep(100);
 	  turnBlue(pixel);
-      await sleep(100);
+      await sleep(200);
       turnBlack(pixel);
 	  
 	  //turn black
@@ -146,8 +146,9 @@
 	  //turn black
 	  board_ctx.beginPath();
 	  board_ctx.fillStyle = "black";
-	  //board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
-	  board_ctx.fill(pixel.x, pixel.y, 8, 8);
+	  board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
+	  //board_ctx.fill(pixel.x, pixel.y, 8, 8);
+	  board.ctx.closePath();
 	  
 	}
 	
@@ -156,8 +157,9 @@
 	  //turn blue
 	  board_ctx.beginPath();
 	  board_ctx.fillStyle = "blue";
-	  //board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
-	  board_ctx.fill(pixel.x, pixel.y, 8, 8);	  
+	  board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
+	  //board_ctx.fill(pixel.x, pixel.y, 8, 8);
+	  board.ctx.closePath();	  
 	
 	}
 	
