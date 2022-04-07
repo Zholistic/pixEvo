@@ -65,13 +65,13 @@
 	
 	function main() {
 	
-        //setTimeout(function onTick() {
+        setTimeout(function onTick() {
         drawBoard();
 		pulseSequenceBlueBlack();
 		
         // Call main again
-        //main();
-      //}, 2000)	  
+        main();
+      }, 2000)	  
 	  
     }
     
@@ -123,7 +123,7 @@
 	async function pulseOnce(pixel) {
 	
 	  //wait 100 ms
-	  await sleep(200);
+	  //await sleep(200);
 	  turnBlue(pixel);
       await sleep(200);
       turnBlack(pixel);
@@ -148,7 +148,7 @@
 	  board_ctx.fillStyle = "black";
 	  board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
 	  //board_ctx.fill(pixel.x, pixel.y, 8, 8);
-	  board.ctx.closePath();
+	  board_ctx.closePath();
 	  
 	}
 	
@@ -159,7 +159,7 @@
 	  board_ctx.fillStyle = "blue";
 	  board_ctx.fillRect(pixel.x, pixel.y, 8, 8);
 	  //board_ctx.fill(pixel.x, pixel.y, 8, 8);
-	  board.ctx.closePath();	  
+	  board_ctx.closePath();	  
 	
 	}
 	
