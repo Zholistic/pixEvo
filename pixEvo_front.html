@@ -65,13 +65,13 @@
 	
 	function main() {
 	
-        setTimeout(function onTick() {
+        //setTimeout(function onTick() {
         drawBoard();
 		pulseSequenceBlueBlack();
 		
         // Call main again
-        main();
-      }, 2000)	  
+        //main();
+      //}, 2000)	  
 	  
     }
     
@@ -123,7 +123,7 @@
 	async function pulseOnce(pixel) {
 	
 	  //wait 100 ms
-	  //await sleep(100);
+	  await sleep(200);
 	  turnBlue(pixel);
       await sleep(200);
       turnBlack(pixel);
