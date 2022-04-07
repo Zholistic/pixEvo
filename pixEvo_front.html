@@ -71,7 +71,7 @@
 		
         // Call main again
         main();
-      }, 10)	  
+      }, 20000)	  
 	  
     }
     
@@ -113,17 +113,17 @@
 	function pulseSequenceBlueBlack() {
 		//turn each pixel white, wait, then black
 		//pixels.forEach(pulseOnce)
-	    //for(let i=0; i < pixels.length; i++) {
-		//	pulseOnce(pixels[i]);
-		//}
-		pulseOnce(pixels[1]);
+	    for(let i=0; i < pixels.length; i++) {
+			pulseOnce(pixels[i]);
+		}
+		//pulseOnce(pixels[1]);
 	}
 	
 	
 	async function pulseOnce(pixel) {
 	
 	  //wait 100 ms
-	  await sleep(100);
+	  //await sleep(100);
 	  turnBlue(pixel);
       await sleep(100);
       turnBlack(pixel);
