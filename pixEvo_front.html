@@ -110,9 +110,12 @@
       //board_ctx.strokeRect(pixelPart.x, pixelPart.y, 10, 10);
     }
 	
-	async function pulseSequenceBlueBlack() {
+	function pulseSequenceBlueBlack() {
 		//turn each pixel white, wait, then black
-		pixels.forEach(pulseOnce)
+		//pixels.forEach(pulseOnce)
+	    for(let i=0; i < pixels.length; i++) {
+			pulseOnce(pixels[i]);
+		}
 	}
 	
 	
